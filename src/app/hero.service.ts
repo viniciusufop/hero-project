@@ -43,11 +43,20 @@ export class HeroService {
     );
   }
 
-  addHero(hero: Hero): Observable<any> {
+  addHero(hero: Hero): Observable<Hero> {
     return this.httpClient.post(this.heroesUrl, hero, this.httpOptions).pipe(
         tap((hero: Hero) => this.log(`criando o heroi id=${hero.id}`)),
-        catchError(this.handleError<any>('addHero'))
+        catchError(this.handleError<Hero>('addHero'))
       )
+  }
+
+  deleteHero(hero: Hero | number): Observable<Hero> {
+    const id = typeof hero === 'number' ? hero : hero.id;
+    const url = `${this.heroesUrl}/${id}`;
+    return this.httpClient.delete<Hero>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`removendo heroi id=${id}`)),
+      catchError(this.handleError<Hero>('deleteHero'))
+    );
   }
 
   private log(message: string) {
