@@ -1,10 +1,12 @@
 # HeroProject
 
+## Objetivo
+Projeto criado para estudar o processo de construção de um sistema em angular7. Desde a criação do projeto, até as modalização das estruturas e sintaxe do typescript.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Servidor de desenvolvimento
+Executar no comando `ng serve` na pasta raiz do projeto. Por default o projeto está configurado para executar na URL `http://localhost:4200/`. Atualizações do arquivos fonte atualizam automaticamente a aplicação em execução.
 
 ## Code scaffolding
 
